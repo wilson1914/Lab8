@@ -1,0 +1,94 @@
+body {
+	margin: 20px;
+	background-image: url("images/shoppingCart.jpg");
+	font-family: Arial;
+}
+
+h1 {
+	color: goldenrod;
+	font-size: 2.10em;
+	text-align: center;
+	font-family: Futura;
+}
+
+#display-list {
+	width: 50%;
+	margin: auto;
+	background-color: black;
+	padding: 10px;
+	border: 1px solid goldenrod;
+	border-radius: 5px;
+}
+
+#center {
+	width: 30%;
+	margin: auto;
+}
+
+#list {
+	color: #ece9d6;
+	margin: auto;
+	text-align: center;
+}
+
+#total {
+	color: goldenrod;
+	font-size: 1.5em;
+	text-align: center;
+	margin: 0px;
+}
+
+#listTotal {
+	color: #ece9d6;
+	border-radius: 3px;
+	width: 30%;
+	margin: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+form input, form button {
+	color: #ece9d6;
+	background-color: black;
+	border: 1px solid goldenrod;
+	position: relative;
+	padding: 5px;
+	left: 300px;
+	border-radius: 5px;
+	font-size: 100%;
+	margin-top: 20px;
+}
+
+#addbutton {
+	background-color: black;
+	color: #ece9d6;
+	border: 1px solid goldenrod;
+	padding: 5px;
+	box-shadow: 0 2px 2px 0 rgb(155, 155, 155);
+	border-radius: 5px;
+}
+
+#addbutton:hover {
+	color: #ece9d6;
+}
+
+#addbutton:active {
+	background-color: #555555;
+}
+
+form {
+	text-align: left;
+	margin: 0;
+}
+
+@media(max-width: 650px) {
+	#total {
+		font-size: 100%;
+	}
+	#listTotal {
+		width: 60%;
+	}
+	#center {
+		width: 80%;
+	}
+}

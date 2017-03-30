@@ -1,60 +1,44 @@
-var total =0;
- var groceryList = [
-   {name: "Cherios",
- 	price: 3.00},
-   {name: "Eggs",
- 	price: 4.00},
-   {name: "Milk",
- 	price: 2.00},
-   {name: "Lettuce",
- 	price: 1.00},
-   {name: "Ketchup",
- 	price: 3.00},
-   {name: "Mustard",
- 	price: 2.00},
-   {name: "Cookies",
- 	price: 4.50},
-   {name: "Yogurt",
- 	price: 2.00},
-   {name: "Creamer",
- 	price: 3.00},
-   {name: "Bread",
- 	price: 3.50},
-   {name: "Salsa",
- 	price: 4.00}
- ];
+var groceryList = [];
+addbutton.onclick = addToList;
 
-function addName() {
-   
-}
- for (var i=0; i<groceryList.length;i++){
-      
-   total+=groceryList[i].price;
-  
- 	    console.log(groceryList[i].name + " $" + groceryList[i].price.toFixed(2));
+//Function to add items to array
 
-  
-   var printedList = document.createElement('div');
-   
-   printedList.innerHTML = groceryList[i].name + " $" + groceryList[i].price.toFixed(2);
+function addToList() {
+		var newItem = document.getElementById('item').value;
+		var newPrice = parseFloat(document.getElementById('price').value);
 
 
-   document.body.appendChild(printedList);
+		if (newItem === "") {
+			alert("Please enter an item's name");
+		}
 
-}
+		else if (isNaN(newPrice)) {
+			alert("The price needs to be a number");
+		}
 
-groceryList.totalAmount = function(){
+		else {
+			var obj = {
+				item: newItem,
+				price: newPrice
+			};
+			groceryList.push(obj);
+			var printList = document.createElement('p');
+			printList.innerHTML = newItem + ":     $" + newPrice.toFixed(2);
+			document.getElementById('list').appendChild(printList);
+		}
 
-   var total = 0;
-      for (var i = 0; i < groceryList.length; i++) {
-         total = total + groceryList[i].price;
-      }
-   return total.toFixed(2);
+		//Get total cost
+		var totalCost = 0;
+		for(var i = 0; i < groceryList.length; i++) {
+			totalCost += groceryList[i].price;
+		};
+
+		//Put total cost into the html document
+		document.getElementById('total').innerHTML = "Total: " + "$" + totalCost.toFixed(2);
+
+
+		//clear the value in the txt field
+		document.getElementById('item').value = "";
+		document.getElementById('price').value = "";
+
 };
-
-var printedTotal = document.createElement('div');
-
-printedTotal.innerHTML = "Total $ " +groceryList.totalAmount();
-
-document.body.appendChild(printedTotal);
-console.log("Total: $"+total);
